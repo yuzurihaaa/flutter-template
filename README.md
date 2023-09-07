@@ -4,15 +4,17 @@
 
 A new Flutter project.
 
-## Getting Started
+## Architecture
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `lib` - main directory for the project
+- `lib/components/<widgets.dart>` - shared widget accross all app
+- `lib/modules` - business logic related to the feature/module
+- `lib/modules/\<module>/components/<widgets.dart>` - shared widget specific for the feature/module
+- `lib/modules/\<module>/components/<widgets.dart>` - shared widget specific for the feature/module
+- `lib/modules/\<module>/components/<module_model.dart>` - shared model specific for the feature/module
+- `lib/modules/\<module>/components/<module_query.dart>` - shared query / logic specific for the feature/module
+- `lib/modules/\<module>/components/<module_repository.dart>` - shared repository / data logic specific for the feature/module
+- `lib/pages` - screens widget
+- `lib/services` - IO logics. Typically native / library features that needs to be encapsulated.
+- `lib/utils` - utilities for the app (for module specific utilities, use `lib/modules/\<module>` instead)
+- Unit test is expected to follow directory structures as in `lib/`
