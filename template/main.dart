@@ -27,7 +27,7 @@ Future<void> handleAppName(String path, String appName) async {
   final dir = Directory(path);
   final List<FileSystemEntity> entities = await dir.list().toList();
   await Future.forEach(entities, (entity) async {
-    if (entity.path.endsWith('template') || entity.path.endsWith('.idea') || entity.path.endsWith('.dart_tool') || entity.path.endsWith('build')) {
+    if (entity.path.endsWith('.git') || entity.path.endsWith('template') || entity.path.endsWith('.idea') || entity.path.endsWith('.dart_tool') || entity.path.endsWith('build')) {
       return;
     }
     if (entity.statSync().type == FileSystemEntityType.file) {

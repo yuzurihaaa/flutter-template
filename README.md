@@ -1,4 +1,6 @@
-# template
+1. Run `make init` to initialize this project.
+
+# {{appName}} 
 
 A new Flutter project.
 
